@@ -3,7 +3,7 @@ from g4f.client import AsyncClient
 import g4f.Provider
 import sys
 async def main():
-    file_name="alloy.mp3"
+    file_name="./output/tmp.mp3"
     client = AsyncClient(provider=g4f.Provider.PollinationsAI)
     if len(sys.argv) > 1:
         user_content = sys.argv[1]
