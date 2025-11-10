@@ -32,7 +32,7 @@ func HandleMessage(bot *tgbotapi.BotAPI, bot2 *tgbotapiV5.BotAPI, message *tgbot
 
 	} else if strings.HasPrefix(message.Text, "/say") {
 		var text string
-		if message.ReplyToMessage.Text != "" {
+		if message.ReplyToMessage != nil {
 			text = message.ReplyToMessage.Text
 			message.MessageID = message.ReplyToMessage.MessageID
 		} else {
@@ -102,6 +102,7 @@ func HandleMessage(bot *tgbotapi.BotAPI, bot2 *tgbotapiV5.BotAPI, message *tgbot
 		view.ReplyToMessage(bot, message.MessageID, message.Chat.ID, res)
 	}
 }
+
 func HandleCallbackQuery(bot *tgbotapi.BotAPI, callback *tgbotapi.CallbackQuery) {
 }
 
