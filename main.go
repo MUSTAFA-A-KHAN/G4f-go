@@ -37,6 +37,8 @@ func StartBot(token string) error {
 			go handler.HandleMessage(bot, bot2, update.Message)
 		} else if update.CallbackQuery != nil {
 			go handler.HandleCallbackQuery(bot, update.CallbackQuery)
+		}else if update.InlineQuery != nil {
+			go handler.HandleInlineQuery(bot, update.InlineQuery)
 		}
 	}
 
